@@ -8,11 +8,16 @@ std::vector<eb::MessageListener> BCPrep::defineOnAnyMessage(const TgBot::Bot& _b
 {
 	std::vector<eb::MessageListener> ml;
 
+	//echo
 	ml.emplace_back([&_b](TgBot::Message::Ptr message) {
 		printf("User wrote %s\n", message->text.c_str());
-		if (StringTools::startsWith(message->text, "/start")) {
+		if (StringTools::startsWith(message->text, "/start")	||
+			StringTools::startsWith(message->text, "/info")		||
+			StringTools::startsWith(message->text, "/help"))
+		{
 			return;
 		}
+
 		_b.getApi().sendMessage(message->chat->id, "Your message is: " + message->text);
 		});
 
@@ -35,6 +40,11 @@ std::unordered_map<std::string, eb::MessageListener> BCPrep::defineOnCommands(co
 
 	um["help"] = [&_b](TgBot::Message::Ptr message) {
 		_b.getApi().sendMessage(message->chat->id, "This is help section of this bot");
+	};
+
+	um["phone"] = [&_b](TgBot::Message::Ptr message) {
+
+	
 	};
 
 	return um;

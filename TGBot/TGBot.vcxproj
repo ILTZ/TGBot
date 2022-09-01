@@ -143,6 +143,7 @@
     <ClInclude Include="BCPrep.h" />
     <ClInclude Include="BotPrep.h" />
     <ClInclude Include="ConfigReader.h" />
+    <ClInclude Include="DBHandler.h" />
     <ClInclude Include="EBroadcaster.h" />
     <ClInclude Include="MyBot.h" />
     <ClInclude Include="resource.h" />
@@ -155,6 +156,7 @@
     <ClCompile Include="BCPrep.cpp" />
     <ClCompile Include="BotPrep.cpp" />
     <ClCompile Include="ConfigReader.cpp" />
+    <ClCompile Include="DBHandler.cpp" />
     <ClCompile Include="EBroadcaster.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MyBot.cpp" />
