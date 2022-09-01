@@ -30,7 +30,8 @@ private:
 	bool pause		= false;
 	bool appIsWork	= true;
 
-	void preparatior();
+	// Load in broadcaster handlers
+	void broadcasterPrep();
 };
 
 

@@ -25,10 +25,17 @@ std::unordered_map<std::string, eb::MessageListener> BCPrep::defineOnCommands(co
 {
 	std::unordered_map<std::string, eb::MessageListener> um;
 
-	um["/start"] = [&_b](TgBot::Message::Ptr message) {
+	um["start"] = [&_b](TgBot::Message::Ptr message) {
 		_b.getApi().sendMessage(message->chat->id, "Hi!");
 		};
 
+	um["info"] = [&_b](TgBot::Message::Ptr message) {
+		_b.getApi().sendMessage(message->chat->id, "Its info about this bot");
+	};
+
+	um["help"] = [&_b](TgBot::Message::Ptr message) {
+		_b.getApi().sendMessage(message->chat->id, "This is help section of this bot");
+	};
 
 	return um;
 }

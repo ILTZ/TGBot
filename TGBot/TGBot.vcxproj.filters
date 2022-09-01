@@ -33,6 +33,9 @@
     <ClInclude Include="BCPrep.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="BotPrep.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="TGBot.rc">
@@ -56,6 +59,9 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="BCPrep.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="BotPrep.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
