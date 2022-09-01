@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="App.h" />
+    <ClInclude Include="BCPrep.h" />
     <ClInclude Include="ConfigReader.h" />
     <ClInclude Include="EBroadcaster.h" />
     <ClInclude Include="MyBot.h" />
@@ -150,6 +151,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="App.cpp" />
+    <ClCompile Include="BCPrep.cpp" />
     <ClCompile Include="ConfigReader.cpp" />
     <ClCompile Include="EBroadcaster.cpp" />
     <ClCompile Include="main.cpp" />

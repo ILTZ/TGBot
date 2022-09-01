@@ -13,6 +13,7 @@ private:
 
 public:
 	App()						noexcept;
+	App(const char* _token)		noexcept;
 	App(const App&)				= delete;
 	App(App&&)					= delete;
 
@@ -21,10 +22,15 @@ public:
 	App& operator=(App&&)		= delete;
 
 public:
+	int		Start();
+	bool	Pause();
+
 
 private:
+	bool pause		= false;
+	bool appIsWork	= true;
 
-
+	void preparatior();
 };
 
 

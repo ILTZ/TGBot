@@ -9,10 +9,11 @@
 #include <string>
 
 
-using listeners = TgBot::EventBroadcaster::MessageListener;
+
 
 class EBroadcaster
 {
+	using listeners = TgBot::EventBroadcaster::MessageListener;
 private:
 	std::unique_ptr<TgBot::EventBroadcaster> bc;
 
@@ -44,11 +45,10 @@ private:
 
 };
 
-
-#endif
+//
 
 template<typename T>
-inline bool EBroadcaster::addHandlers(TgBot::EventBroadcaster* _bc, 
+inline bool EBroadcaster::addHandlers(TgBot::EventBroadcaster* _bc,
 	void(TgBot::EventBroadcaster::* _func)(const T&), const std::vector<T>& _arr)
 {
 	if (_bc)
@@ -62,3 +62,7 @@ inline bool EBroadcaster::addHandlers(TgBot::EventBroadcaster* _bc,
 
 	return false;
 }
+
+#endif
+
+

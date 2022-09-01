@@ -13,14 +13,6 @@ TgBot::EventBroadcaster* EBroadcaster::Get() const
 
 bool EBroadcaster::SetMessageHandlers(const std::vector<TgBot::EventBroadcaster::MessageListener>& _listenersArr)
 {
-	/*if (bc.get())
-	{
-		for (const auto& el : _listenersArr)
-		{
-			bc->onAnyMessage(el);
-		}
-		return true;
-	}*/	
 	if (addHandlers(bc.get(), &TgBot::EventBroadcaster::onAnyMessage, _listenersArr))
 		return true;
 
@@ -29,57 +21,55 @@ bool EBroadcaster::SetMessageHandlers(const std::vector<TgBot::EventBroadcaster:
 
 bool EBroadcaster::SetCommandHandlers(const std::unordered_map<std::string, TgBot::EventBroadcaster::MessageListener>& _commandSArr)
 {
-	/*if (bc.get())
+	if (bc.get())
 	{
 		for (const auto& el : _commandSArr)
 		{
 			bc->onCommand(el.first, el.second);
 		}
 		return true;
-	}*/
+	}
 
 	return false;
 }
 
 bool EBroadcaster::SetUncnownCommandHandlers(const std::vector<listeners>& _uCommands)
 {
-	if (bc.get())
-	{
-		for (const auto& el : _uCommands)
-		{
-			bc->onUnknownCommand(el);
-		}
+	if (addHandlers(bc.get(), &TgBot::EventBroadcaster::onUnknownCommand, _uCommands))
 		return true;
-	}
+
 
 	return false;
 }
 
 bool EBroadcaster::SetNonCommandHandlers(const std::vector<listeners>& _nonCommands)
 {
-	if (bc.get())
-	{
-		for (const auto& el : _nonCommands)
-		{
-			bc->onUnknownCommand(el);
-		}
+	if (addHandlers(bc.get(), &TgBot::EventBroadcaster::onNonCommandMessage, _nonCommands))
 		return true;
-	}
 
 	return false;
 }
 
 bool EBroadcaster::SetInliniQueryHandlers(const std::vector<TgBot::EventBroadcaster::InlineQueryListener>& _iqList)
 {
+	if (addHandlers(bc.get(), &TgBot::EventBroadcaster::onInlineQuery, _iqList))
+		return true;
+
 	return false;
 }
 
 bool EBroadcaster::SetChousenInliniResultListenersHandlers(const std::vector<TgBot::EventBroadcaster::ChosenInlineResultListener>& _ocirList)
 {
+	if (addHandlers(bc.get(), &TgBot::EventBroadcaster::onChosenInlineResult, _ocirList))
+		return true;
+
 	return false;
 }
 
 bool EBroadcaster::SetCallbackQueryHandlers(const std::vector<TgBot::EventBroadcaster::CallbackQueryListener>& _cqList)
 {
+	if (addHandlers(bc.get(), &TgBot::EventBroadcaster::onCallbackQuery, _cqList))
+		return true;
+
 	return false;
 }

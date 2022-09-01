@@ -1,56 +1,20 @@
-#include <tgbot/tgbot.h>
-#include <stdio.h>
+#include "App.h"
 
-#include <soci/soci.h>
 
-#include <tgbot/EventBroadcaster.h>
-#include <tgbot/EventHandler.h>
-#include <tgbot/Api.h>
-
-namespace ConstDatas
+namespace ConstData
 {
     const char* TOKEN = "5690128645:AAFsUIswYq3BrDgjZm9wpIh_sfWYTDL4LJQ";
 }
 
 
-using namespace TgBot;
-
-class A
-{
-public:
-
-    void foo() { std::cout << "Fooo\n"; }
-    void boo() { std::cout << "Boo\n"; }
-
-private:
-    
-    template<typename T>
-    void add(A* a, void(A::* _func)(), std::vector<int>& _vec)
-    {
-        (a->*_func)(_vec);
-        std::cout << "Add w vec\n";
-    }
-};
-
-
-void addInArr(A* obj, void(A::*func)())
-{
-    (obj->*func)();
-    std::cout << "Add in dir func\n";
-}
 
 
 
 int main()
 {
+    App app(ConstData::TOKEN);
 
-    A a;
-    addInArr(&a, &A::foo);
-    addInArr(&a, &A::boo);
-
-
-
-
+    app.Start();
 
     /*std::string token = ("5690128645:AAFsUIswYq3BrDgjZm9wpIh_sfWYTDL4LJQ");
     TgBot::Bot bot(token);

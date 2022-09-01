@@ -30,6 +30,9 @@
     <ClInclude Include="EBroadcaster.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="BCPrep.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="TGBot.rc">
@@ -50,6 +53,9 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="EBroadcaster.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="BCPrep.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
