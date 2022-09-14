@@ -77,6 +77,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>H:\Prog\Libs\soci-build\include;H:\Prog\Libs\soci-master\include;C:\Program Files\OpenSSL\include;H:\Prog\Libs\tgbot-cpp-master\include;H:\Prog\Libs\BoostBuild\include\boost-1_80</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -94,6 +95,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>H:\Prog\Libs\soci-build\include;H:\Prog\Libs\soci-master\include;C:\Program Files\OpenSSL\include;H:\Prog\Libs\tgbot-cpp-master\include;H:\Prog\Libs\BoostBuild\include\boost-1_80</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -111,6 +113,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>H:\Prog\Libs\soci-build\include;H:\Prog\Libs\soci-master\include;C:\Program Files\OpenSSL\include;H:\Prog\Libs\tgbot-cpp-master\include;H:\Prog\Libs\BoostBuild\include\boost-1_80</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -128,6 +131,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>H:\Prog\Libs\soci-build\include;H:\Prog\Libs\soci-master\include;C:\Program Files\OpenSSL\include;H:\Prog\Libs\tgbot-cpp-master\include;H:\Prog\Libs\BoostBuild\include\boost-1_80</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -144,6 +148,7 @@
     <ClInclude Include="BotPrep.h" />
     <ClInclude Include="ConfigReader.h" />
     <ClInclude Include="DBHandler.h" />
+    <ClInclude Include="DBStructs.h" />
     <ClInclude Include="EBroadcaster.h" />
     <ClInclude Include="MyBot.h" />
     <ClInclude Include="resource.h" />

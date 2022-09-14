@@ -7,12 +7,12 @@
 class App
 {
 private:
-	std::unique_ptr<MyBot>			bot;
-	std::unique_ptr<EBroadcaster>	broadcaster;
+	MyBot			bot;
+	EBroadcaster	broadcaster;
 
 
 public:
-	App()						noexcept;
+	App()						= delete;
 	App(const char* _token)		noexcept;
 	App(const App&)				= delete;
 	App(App&&)					= delete;
