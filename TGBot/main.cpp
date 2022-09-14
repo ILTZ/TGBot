@@ -3,7 +3,7 @@
 
 namespace ConstData
 {
-    const char* TOKEN = "5690128645:AAFsUIswYq3BrDgjZm9wpIh_sfWYTDL4LJQ";
+    const char* TOKEN = "TOKEN";
 }
 
 #include <tgbot/tgbot.h>
