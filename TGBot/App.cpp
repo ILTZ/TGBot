@@ -3,49 +3,64 @@
 #include "BCPrep.h"
 #include "BotPrep.h"
 
-App::App(const char* _token) noexcept :
-	pause{ false }, appIsWork{ true }, bot(_token), broadcaster()
-{
 
-}
+#include "SmartPointer.h"
+
+
+using namespace APP;
 
 int App::Start()
 {
-	while (appIsWork)
-	{
-		broadcasterPrep();
+	SmartPointer::SmartPointer<CONFIG_READER::ConfigReader> reader = new CONFIG_READER::ConfigReader();
 
-		TgBot::EventHandler handler(*broadcaster.Get());
-		TgBot::TgLongPoll pool(&bot.Get()->getApi(), &handler, 100, 10, nullptr);
-		while (!pause)
-		{
-			std::cout << "LongPoll started..." << std::endl;
-			pool.start();
-		}
-	}
-	return 1;
-}
-
-bool App::Pause()
-{
-	pause = true;
-
-	return pause;
-}
-
-void App::broadcasterPrep()
-{
+	auto bot = createBot(*reader);
+	auto bc = createBroadcaster(*reader);
 	
-	// Broadcaster prep {
-	std::unique_ptr<BCPrep> prep = std::make_unique<BCPrep>();
-	broadcaster.SetMessageHandlers(prep->defineOnAnyMessage(*bot.Get()));
-	broadcaster.SetCommandHandlers(prep->defineOnCommands(*bot.Get()));
-	// Broadcaster prep }
+	if (!prepareBroadcaster(*bc, *bot) || !botPrepare(*bot))
+		return 1;
+	
+	TgBot::TgLongPoll pool(&bot->Get().getApi(), &bc->GetEventHandler(), 100, 10, nullptr);
 
-	// Bot prep {
-	std::unique_ptr<BotPrep> bPrep = std::make_unique<BotPrep>();
-	bot.Get()->getApi().setMyCommands(bPrep->defineBotCommands());
-	// Bot prep }
+	state.SetState(APP::States::WORKING);
+	while (state.IsPoolWorking())
+	{
+		std::cout << "LongPoll started..." << std::endl;
+		pool.start();
+	}
+	
+	return 0;
+}
 
 
+
+
+std::unique_ptr<MyBot> App::createBot(CONFIG_READER::ConfigReader& _reder) const
+{
+
+	return std::make_unique<MyBot>(_reder.GetToken().value().c_str());
+}
+
+std::unique_ptr<EBroadcaster> APP::App::createBroadcaster(CONFIG_READER::ConfigReader& _reder) const
+{
+
+	return std::make_unique<EBroadcaster>();
+}
+
+const bool APP::App::prepareBroadcaster(EBroadcaster& _bc, MyBot& _bot) const
+{
+	SmartPointer::SmartPointer<BCPrep> bcPrep = new BCPrep();
+
+	_bc.SetMessageHandlers(bcPrep->defineOnAnyMessage(_bot.Get()));
+	_bc.SetCommandHandlers(bcPrep->defineOnCommands(_bot.Get()));
+
+	return true;
+}
+
+const bool APP::App::botPrepare(MyBot& _bot) const
+{
+	SmartPointer::SmartPointer<BotPrep> botPrep = new BotPrep();
+
+	_bot.Get().getApi().setMyCommands(botPrep->defineBotCommands());
+
+	return true;
 }

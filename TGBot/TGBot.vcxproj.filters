@@ -13,65 +13,99 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Файлы заголовков\DataBase">
+      <UniqueIdentifier>{48623616-956b-4062-a55d-3a32b0b15fd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\DataBase">
+      <UniqueIdentifier>{329a6ff8-2adc-475b-a501-18aa87cb349f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Utilites">
+      <UniqueIdentifier>{bc052947-a2ff-4805-b009-26df7ceb296b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Utilites">
+      <UniqueIdentifier>{11a50c88-8438-4535-a098-959548fadb67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\App">
+      <UniqueIdentifier>{91dc486c-a3f7-4e30-87f4-34191c38e905}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\App">
+      <UniqueIdentifier>{20716b75-2a73-448b-a420-d200e613b4f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\BaseClasses">
+      <UniqueIdentifier>{568bb474-0812-4838-9240-14e4d6b74b33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Bot">
+      <UniqueIdentifier>{e70e92ee-1e1f-49aa-9979-6805ce463179}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Bot\Prepares">
+      <UniqueIdentifier>{77b55c9a-6378-4611-8af7-9a01d56fd903}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Bot">
+      <UniqueIdentifier>{3fa8c7da-cc14-499a-a326-c856d8979093}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Bot\Prepares">
+      <UniqueIdentifier>{14b249c3-b410-4f18-8af9-8aa75a6af8ef}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="resource.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="MyBot.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="ConfigReader.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="App.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="EBroadcaster.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="BCPrep.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="BotPrep.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="DBHandler.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\DataBase</Filter>
     </ClInclude>
     <ClInclude Include="DBStructs.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="ConfigReader.h">
+      <Filter>Файлы заголовков\Utilites</Filter>
+    </ClInclude>
+    <ClInclude Include="SmartPointer.h">
+      <Filter>Файлы заголовков\Utilites</Filter>
+    </ClInclude>
+    <ClInclude Include="App.h">
+      <Filter>Файлы заголовков\App</Filter>
+    </ClInclude>
+    <ClInclude Include="AppState.h">
+      <Filter>Файлы заголовков\App</Filter>
+    </ClInclude>
+    <ClInclude Include="BCPrep.h">
+      <Filter>Файлы заголовков\Bot\Prepares</Filter>
+    </ClInclude>
+    <ClInclude Include="BotPrep.h">
+      <Filter>Файлы заголовков\Bot\Prepares</Filter>
+    </ClInclude>
+    <ClInclude Include="EBroadcaster.h">
+      <Filter>Файлы заголовков\Bot</Filter>
+    </ClInclude>
+    <ClInclude Include="MyBot.h">
+      <Filter>Файлы заголовков\Bot</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="TGBot.rc">
-      <Filter>Файлы ресурсов</Filter>
-    </ResourceCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="MyBot.cpp">
-      <Filter>Исходные файлы</Filter>
+    <ClCompile Include="DBHandler.cpp">
+      <Filter>Исходные файлы\DataBase</Filter>
     </ClCompile>
     <ClCompile Include="ConfigReader.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\Utilites</Filter>
     </ClCompile>
     <ClCompile Include="App.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\App</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Исходные файлы\App</Filter>
+    </ClCompile>
+    <ClCompile Include="AppState.cpp">
+      <Filter>Исходные файлы\App</Filter>
+    </ClCompile>
+    <ClCompile Include="MyBot.cpp">
+      <Filter>Исходные файлы\Bot</Filter>
     </ClCompile>
     <ClCompile Include="EBroadcaster.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\Bot</Filter>
     </ClCompile>
     <ClCompile Include="BCPrep.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\Bot\Prepares</Filter>
     </ClCompile>
     <ClCompile Include="BotPrep.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="DBHandler.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\Bot\Prepares</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,39 +1,26 @@
 #include "App.h"
-
-
-namespace ConstData
-{
-    const char* TOKEN = "TOKEN";
-}
-
-#include <tgbot/tgbot.h>
-
-using namespace std;
-using namespace TgBot;
-
-
+#include <Windows.h>
 
 int main()
 {
     try
     {
-        App app(ConstData::TOKEN);
+        APP::App app;
         return app.Start();
     }
     catch (TgBot::TgException& ex)
     {
-        printf("TgError: %s\n", ex.what());
+        MessageBoxA(nullptr, ex.what(), "ERROR", MB_OK | MB_ICONERROR);
     }
     catch (std::exception& ex)
     {
-        printf("StlError: %s\n", ex.what());
+        MessageBoxA(nullptr, ex.what(), "ERROR", MB_OK | MB_ICONERROR);
     }
     catch (...)
     {
-        printf("Unknown exception...%s\n");
+        MessageBoxA(nullptr, "Unknown exception...", "ERROR", MB_OK | MB_ICONERROR);
     }
 
 
     return 0;
-
 }

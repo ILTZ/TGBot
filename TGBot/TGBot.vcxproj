@@ -76,7 +76,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>H:\Prog\Libs\soci-build\include;H:\Prog\Libs\soci-master\include;C:\Program Files\OpenSSL\include;H:\Prog\Libs\tgbot-cpp-master\include;H:\Prog\Libs\BoostBuild\include\boost-1_80</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>H:\Prog\Libs\json-develop\include;H:\Prog\Libs\soci-build\include;H:\Prog\Libs\soci-master\include;C:\Program Files\OpenSSL\include;H:\Prog\Libs\tgbot-cpp-master\include;H:\Prog\Libs\BoostBuild\include\boost-1_80</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -94,7 +94,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>H:\Prog\Libs\soci-build\include;H:\Prog\Libs\soci-master\include;C:\Program Files\OpenSSL\include;H:\Prog\Libs\tgbot-cpp-master\include;H:\Prog\Libs\BoostBuild\include\boost-1_80</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>H:\Prog\Libs\json-develop\include;H:\Prog\Libs\soci-build\include;H:\Prog\Libs\soci-master\include;C:\Program Files\OpenSSL\include;H:\Prog\Libs\tgbot-cpp-master\include;H:\Prog\Libs\BoostBuild\include\boost-1_80</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -112,7 +112,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>H:\Prog\Libs\soci-build\include;H:\Prog\Libs\soci-master\include;C:\Program Files\OpenSSL\include;H:\Prog\Libs\tgbot-cpp-master\include;H:\Prog\Libs\BoostBuild\include\boost-1_80</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>H:\Prog\Libs\json-develop\include;H:\Prog\Libs\soci-build\include;H:\Prog\Libs\soci-master\include;C:\Program Files\OpenSSL\include;H:\Prog\Libs\tgbot-cpp-master\include;H:\Prog\Libs\BoostBuild\include\boost-1_80</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -130,7 +130,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>H:\Prog\Libs\soci-build\include;H:\Prog\Libs\soci-master\include;C:\Program Files\OpenSSL\include;H:\Prog\Libs\tgbot-cpp-master\include;H:\Prog\Libs\BoostBuild\include\boost-1_80</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>H:\Prog\Libs\json-develop\include;H:\Prog\Libs\soci-build\include;H:\Prog\Libs\soci-master\include;C:\Program Files\OpenSSL\include;H:\Prog\Libs\tgbot-cpp-master\include;H:\Prog\Libs\BoostBuild\include\boost-1_80</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -144,6 +144,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="App.h" />
+    <ClInclude Include="AppState.h" />
     <ClInclude Include="BCPrep.h" />
     <ClInclude Include="BotPrep.h" />
     <ClInclude Include="ConfigReader.h" />
@@ -151,13 +152,11 @@
     <ClInclude Include="DBStructs.h" />
     <ClInclude Include="EBroadcaster.h" />
     <ClInclude Include="MyBot.h" />
-    <ClInclude Include="resource.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="TGBot.rc" />
+    <ClInclude Include="SmartPointer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="App.cpp" />
+    <ClCompile Include="AppState.cpp" />
     <ClCompile Include="BCPrep.cpp" />
     <ClCompile Include="BotPrep.cpp" />
     <ClCompile Include="ConfigReader.cpp" />

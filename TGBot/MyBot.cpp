@@ -1,15 +1,22 @@
 #include "MyBot.h"
 
-MyBot::MyBot(const char* _token)
+MyBot::MyBot(const char* _token) :
+	myBot{_token}
 {
-
-
-	myBot = std::make_unique<TgBot::Bot>(_token);
+	
 }
 
-TgBot::Bot* MyBot::Get() const
+TgBot::Bot& MyBot::Get()
 {
-	return myBot.get();
+	return myBot;
 }
+
+TgBot::Bot* MyBot::operator*()
+{
+	return &myBot;
+}
+
+
+
 
 

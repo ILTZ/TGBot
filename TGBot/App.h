@@ -1,38 +1,40 @@
 #ifndef APP_H
 #define APP_H
 
-#include "MyBot.h"
 #include "EBroadcaster.h"
+#include "MyBot.h"
+#include "ConfigReader.h"
+#include "AppState.h"
 
-class App
+namespace APP
 {
-private:
-	MyBot			bot;
-	EBroadcaster	broadcaster;
+	class App
+	{
+	private:
+		AppState		state;
 
+	public:
+		App() noexcept				= default;
 
-public:
-	App()						= delete;
-	App(const char* _token)		noexcept;
-	App(const App&)				= delete;
-	App(App&&)					= delete;
+	public:
+		App(const App&)				= delete;
+		App(App&&)					= delete;
 
-public:
-	App& operator=(const App&)	= delete;
-	App& operator=(App&&)		= delete;
+		App& operator=(const App&)	= delete;
+		App& operator=(App&&)		= delete;
 
-public:
-	int		Start();
-	bool	Pause();
+	public:
+		int		Start();
 
+	private:
+		std::unique_ptr<MyBot>			createBot(CONFIG_READER::ConfigReader& _reder)			const;
+		std::unique_ptr<EBroadcaster>	createBroadcaster(CONFIG_READER::ConfigReader& _reder)	const;
 
-private:
-	bool pause		= false;
-	bool appIsWork	= true;
+		const bool prepareBroadcaster(EBroadcaster& _bc, MyBot& _bot)	const;
+		const bool botPrepare(MyBot& _bot)								const;
+	};
+}
 
-	// Load in broadcaster handlers
-	void broadcasterPrep();
-};
 
 
 #endif

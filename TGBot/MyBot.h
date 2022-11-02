@@ -7,6 +7,7 @@
 class MyBot
 {
 private:
+	TgBot::Bot myBot;
 
 public:
 	MyBot(const char* _token);
@@ -18,10 +19,9 @@ public:
 	MyBot& operator=(MyBot&&)		= delete;
 
 public:
-	TgBot::Bot* Get()	const;
+	TgBot::Bot& Get();
 
-private:
-	std::unique_ptr<TgBot::Bot> myBot;
+	TgBot::Bot* operator*();
 
 };
 

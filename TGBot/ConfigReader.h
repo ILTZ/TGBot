@@ -1,25 +1,51 @@
 #ifndef CONFIGR_H
 #define CONFIGR_H
 
-class ConfigReader
+#include <nlohmann/json.hpp>
+#include <string>
+#include <optional>
+
+namespace CONFIG_READER
 {
-private:
+	
 
-public:
-	ConfigReader()									noexcept;
-	ConfigReader(const ConfigReader&)				= delete;
-	ConfigReader(ConfigReader&&)					= delete;
+	class ConfigReader
+	{
+	private:
 
-	ConfigReader& operator=(const ConfigReader&)	= delete;
-	ConfigReader& operator-(ConfigReader&&)			= delete;
+	public:
+		ConfigReader()									noexcept;
+		ConfigReader(const ConfigReader&)				= delete;
+		ConfigReader(ConfigReader&&)					= delete;
 
-	bool ReadConfigFile();
+		ConfigReader& operator=(const ConfigReader&)	= delete;
+		ConfigReader& operator-(ConfigReader&&)			= delete;
 
-private:
+		const std::optional<std::string> GetToken() const;
+
+	private:
+		nlohmann::json openFile(const char* _pathToFile) const;
+
+		template <typename T>
+		void extractValue(
+			const nlohmann::json& _file, 
+			const char* _key, 
+			const char* _path, 
+			T& _destValue) const;
 
 
-};
-
+	};
+	template<typename T>
+	inline void ConfigReader::extractValue(
+		const nlohmann::json& _file, 
+		const char* _key, 
+		const char* _path, 
+		T& _destValue) const
+	{
+		
+		_destValue = static_cast<T>(_file[_key]);
+	}
+}
 
 #endif
 
